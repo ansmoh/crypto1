@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://www.ezbtc.ca/';
+$config['base_url'] = 'http://ez2ex.circlesandrectangles4life.net';
 // $config['base_url'] = 'http://ezbtc.ca/test/';
 
 /*
@@ -53,7 +53,7 @@ $config['index_page'] = '';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol'] = "REQUEST_URI";
+$config['uri_protocol'] = "QUERY_STRING";
 
 /*
 |--------------------------------------------------------------------------

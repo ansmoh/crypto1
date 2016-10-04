@@ -1,10 +1,6 @@
 RewriteEngine on
 RewriteBase /
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://www.ezbtc.ca/$1 [L,R=301] 
-
-RewriteCond %{HTTP_HOST} !^www\.
-RewriteRule ^(.*)$ https://www.ezbtc.ca/$1 [L,R=301]
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?/$1 [L]
+RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
