@@ -64,6 +64,7 @@ foreach($page_url as $key => $value)
 					<!--<p>Thank you for becoming a verified member of EZBTC. Please place your order to either to buy, sell or send Bitcoin using the icons found on screen.</p><br/><p>If you require assistance, you can contact us using live chat, calling us or via email. We are always happy to help.</p>-->	
 				<?php } else {?>	
 					<div id="para1">
+						
 						<p>We are currently still developing your personal dashboard. In the meantime you and buy and sell bitcoin using the icons above or the links to the left.</p><br/><p>In order to buy or sell on ezBtc you first need to verify your account by clicking the link and providing the documentation requested.</p><br/><p>Verifications are done within 12 hours unless you specify a later date for your video chat.</p><br/><p>Thanks for joining ezBtc, keep coming back and watch as we keep developing our platform. We have a lot planned for this space.</p>
 					</div>
 				<?php } ?>		

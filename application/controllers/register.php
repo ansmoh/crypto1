@@ -65,6 +65,7 @@ class Register extends MY_Controller {
 									  'username' => $this->input->post('username'),
  									  'user_role_id' => 2,
 									  'is_active' => 1,									  
+									  'email_isverified' => 1,									  
 									  'email_token' => $email_token,
 									  'email_expiry' => $expire_email,
 									  'created_on' => $currenttime,

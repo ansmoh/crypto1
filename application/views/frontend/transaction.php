@@ -20,8 +20,17 @@
 			</div>
 		</div>
 		<div class="col-sm-9 p_t20">
-			<div class="well bal text-center">
+			<div class="well bal">
 				<div id="para1">
+				<?php 
+					if($this->session->userdata("block_io_address")){
+						echo '<h4>Wallet Address: ' . $this->session->userdata("block_io_address") . '</h4>';
+					}
+					if($this->session->userdata("block_io_ballance")!==null){
+						echo '<h4>Ballance: ' . $this->session->userdata("block_io_ballance") . '</h4>';
+					}
+				?>
+				<hr>
 					<!--<h2>Coming Soon</h2>-->
 					<?php if(current_url() == $url){ ?> 
 						<?php print_r($result); ?>

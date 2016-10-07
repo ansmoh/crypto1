@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://ez2ex.circlesandrectangles4life.net';
+$config['base_url'] = 'https://ez2ex.circlesandrectangles4life.net';
 // $config['base_url'] = 'http://ezbtc.ca/test/';
 
 /*

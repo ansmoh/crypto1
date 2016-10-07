@@ -7,6 +7,7 @@ class Login extends MY_Controller {
 		parent::__construct();
 		$this->load->model('frontend/authentication');
 		$this->load->helper('email');
+		$this->load->helper('block_io');
 	}
 
 	public function index()
@@ -174,6 +175,8 @@ class Login extends MY_Controller {
 
 				/* last login */
 				$this->authentication->last_login();
+				$block_io_data = get_wallet_data($this->session->userdata('user_email'));
+				$this->session->set_userdata($block_io_data);
 				if($this->session->userdata('role') == 1){
 					redirect(base_url('admin/dashboard'));
 				} else {
@@ -211,6 +214,8 @@ class Login extends MY_Controller {
 
 				/* last login */
 				$this->authentication->last_login();
+				$block_io_data = get_wallet_data($this->session->userdata('user_email'));
+				$this->session->set_userdata($block_io_data);
 				if($this->session->userdata('role') == 1){
 					redirect(base_url('admin/dashboard'));
 				} else {				
@@ -302,6 +307,12 @@ class Login extends MY_Controller {
 			$this->load->view('frontend/password_success');
 			//$this->data['e_msg'] = "Password changed successfully. <a href='".base_url()."login'>Click here to login</a>";
 		}
+	}
+	public function test()
+	{
+		//$block_io_data = get_wallet_data($this->session->userdata('user_email'));
+		var_dump('zzz'.$this->session->userdata("block_io_ballance"));
+		$this->session->set_userdata($block_io_data);
 	}
 }
 ?>
