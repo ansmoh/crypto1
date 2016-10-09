@@ -1,8 +1,81 @@
 <footer>
+	<!--<div class="container">
+	<div class="row">
+	<div class="col-sm-9">
+	<div class="row">
+	<div class="col-sm-3">
+	<h2>Services</h2>
+	<ul>
+	<li><a href="#">Buy Bitcoins</a></li>
+<li><a href="#">Buy Ethereum</a></li>
+<li><a href="#">Sell Bitcoins</a></li>
+<li><a href="#">Bitcoin Trading</a></li>
+<li><a href="#">Cloud Mining</a></li>
+	</ul>
+</div>
+<div class="col-sm-3">
+	<h2>Information</h2>
+	<ul>
+	<li><a href="#">Payment Options</a></li>
+<li><a href="#">Fee Schedule</a></li>
+<li><a href="#">Getting Started</a></li>
+<li><a href="#">Identity Verification Guide</a></li>
+<li><a href="#">Card Verification Guide</a></li>
+	</ul>
+</div>
+<div class="col-sm-3">
+	<h2>Tools</h2>
+	<ul>
+	<li><a href="#">API</a></li>
+<li><a href="#">Bitcoin Calculator</a></li>
+<li><a href="#">Bitcoin Price Widget</a></li>
+<li><a href="#">Mobile App</a></li>
+</ul>
+</div>
+<div class="col-sm-3">
+	<h2>Tools</h2>
+	<ul>
+	<li><a href="#">About Us</a></li>
+<li><a href="#">Legal & Security</a></li>
+<li><a href="#">Press</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Help Centre</a></li>
+</ul>
+</div>
+
+	
+	</div>
+	</div>
+	<div class="col-sm-3 col-md-3">
+	<p>Customer satisfaction rating</p>
+	<img src="<?php echo base_url(); ?>assets/images/star.png" alt="">
+	<p><span>88</span> of last 100 <span>users satisfied</span></p>
+	<img src="<?php echo base_url(); ?>assets/images/visa.png" alt="">
+	<ul class="social">
+	<li><a target="_blank" href="https://www.facebook.com/EzBtc-1748499078769142"><i class="fa fa-facebook"></i></a></li>
+	<li><a target="_blank" href="https://plus.google.com/u/0/111447015451371306496"><i class="fa fa-google-plus"></i></a></li>
+    <li><a target="_blank" href="https://www.twitter.com/ezBtcCanada"><i class="fa fa-twitter"></i></a></li>
+    <li><a target="_blank" href="https://www.pinterest.com/ezBtcCanada"><i class="fa fa-pinterest-p"></i></a></li>
+	
+	</ul>
+	</div>
+	</div>
+	</div>
+	</div>
+	<div class="bottom_copy ">
+		<div class="container">
+			<div class="pull-left"> 
+				<a href="javascript:void(0)"><i class="fa fa-phone"></i> 1-877-755-2249</a>
+				<a href="javascript:void(0)"><i class="fa fa-envelope"></i> info@ezbtc.ca</a>
+			</div>
+			<div class="pull-right">Copyright 2016 - EZBTC. All Rights Reserved.</div>
+	</div>
+	</div>-->
+	
 	<div class="container">
 	<div class="row">
 	<div class="col-sm-4 col-md-3 col-md-offset-3">
-	<a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/images/foot_logo.png" alt="Footer logo"></a>
+	<a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/images/logo.png"></a>
 	<br/><br/>
 	<address><i class="fa fa-map-marker"></i> <p>517-938 Howe Street<br>
 Vancouver, BC<br>
@@ -32,10 +105,11 @@ V6Z 1N9
 			<div class="pull-right">Copyright 2016 - EZBTC. All Rights Reserved.</div>
 	</div>
 	</div>
+	
 	</footer>
 	
 <!-- Start of LiveChat (www.livechatinc.com) code -->
-<script type="text/javascript">
+<!--<script type="text/javascript">
 window.__lc = window.__lc || {};
 window.__lc.license = 7570511;
 (function() {
@@ -44,6 +118,26 @@ window.__lc.license = 7570511;
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
 })();
 </script>
+--><!-- End of LiveChat code -->
+<!-- New live chat code -->
+<?php if(''!=$this->session->userdata('username')){?>
+<script>
+  window.intercomSettings = {
+    app_id: "xpladpoz",
+    name: "<?php echo $this->session->userdata('username'); ?>", // Full name
+    email: "<?php echo $this->session->userdata('user_email'); ?>", // Email address
+    created_at: <?php echo date("Y-m-d",strtotime($this->session->userdata('created_on'))); ?> // Signup date as a Unix timestamp
+  };
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/xpladpoz';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+<? }else{?>
+<script>
+  window.intercomSettings = {
+    app_id: "xpladpoz"
+  };
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/xpladpoz';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+<? } ?>
 <!-- End of LiveChat code -->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -52,6 +146,8 @@ window.__lc.license = 7570511;
     <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
 	 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.event.move.js"></script>
+	<script src="<?php echo base_url()?>assets/js/responsive-slider.js"></script>
 	 <script>	
 	jQuery("#contact_msg").hide();
 	jQuery(function() {

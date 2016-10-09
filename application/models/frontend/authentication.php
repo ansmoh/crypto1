@@ -47,7 +47,7 @@ class Authentication extends CI_Model{
 	}
 	public function login_user($data)
 	{	
-        $this->db->select(array('user_id','email','username','user_role_id'));
+        $this->db->select(array('user_id','email','username','user_role_id','created_on'));
 		$this->db->from('tbl_user');
 		$this->db->where(array('email' => $data['u.email'], 'password' => $data['u.password'],'email_isverified' => '1'));
 		$this->db->limit(1);

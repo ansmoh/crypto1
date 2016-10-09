@@ -9,6 +9,7 @@
 		<link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo base_url();?>assets/css/style.css?ver=1.0.1" rel="stylesheet">
 		<link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">   
+		<link href="<?php echo base_url();?>assets/css/responsive-slider.css" rel="stylesheet" media="screen">
 	</head>
 	<body>
 	<div id="banner">
@@ -39,20 +40,18 @@
 				</div>
 			</div>	
 			<nav>		  
-				<!-- Brand and toggle get grouped for better mobile display -->			
-				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1">
 					<div class="container">									
 						<?php if($this->session->userdata('userid')){ ?>
 							<ul class="nav custom">
 								<?php if(current_url() == base_url()){?>
 									<li><a class="active" href="<?php echo base_url(); ?>dashboard">Home</a></li>
-									<li><a href="#what">Buy or Sell Bitcoin Instantly</a></li>
+									<!--<li><a href="#what">Buy or Sell Bitcoin Instantly</a></li>-->
 									<li><a href="#location">Bitcoin ATM Locations</a></li>
 									<li><a href="#contact">Contact</a></li>			
 								<?php } else { ?>
 									<li><a href="<?php echo base_url(); ?>dashboard">Home</a></li>
-									<li><a href="<?php echo base_url(); ?>#what">Buy or Sell Bitcoin Instantly</a></li>
+									<!--<li><a href="<?php echo base_url(); ?>#what">Buy or Sell Bitcoin Instantly</a></li>-->
 									<li><a href="<?php echo base_url(); ?>#location">Bitcoin ATM Locations</a></li>
 									<li><a href="<?php echo base_url(); ?>#contact">Contact</a></li>	
 								<?php } ?>
@@ -79,12 +78,12 @@
 							<ul class="nav custom">
 								<?php if(current_url() == base_url()){?>
 									<li><a class="active" href="#banner">Home</a></li>
-									<li><a href="#what">Buy or Sell Bitcoin Instantly</a></li>
+									<!--<li><a href="#what">Buy or Sell Bitcoin Instantly</a></li>-->
 									<li><a href="#location">Bitcoin ATM Locations</a></li>
 									<li><a href="#contact">Contact</a></li>			
 								<?php } else { ?>
 									<li><a href="<?php echo base_url(); ?>#banner">Home</a></li>
-									<li><a href="<?php echo base_url(); ?>#what">Buy or Sell Bitcoin Instantly</a></li>
+									<!--<li><a href="<?php echo base_url(); ?>#what">Buy or Sell Bitcoin Instantly</a></li>-->
 									<li><a href="<?php echo base_url(); ?>#location">Bitcoin ATM Locations</a></li>
 									<li><a href="<?php echo base_url(); ?>#contact">Contact</a></li>	
 								<?php } ?>
