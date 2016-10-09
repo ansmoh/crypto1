@@ -27,7 +27,7 @@
 						echo '<h4>Wallet Address: ' . $this->session->userdata("block_io_address") . '</h4>';
 					}
 					if($this->session->userdata("block_io_ballance")!==null){
-						echo '<h4>Ballance: ' . $this->session->userdata("block_io_ballance") . '</h4>';
+						echo '<h4>Balance: ' . $this->session->userdata("block_io_ballance") . '</h4>';
 					}
 				?>
 				<hr>
