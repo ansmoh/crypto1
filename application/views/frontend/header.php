@@ -38,32 +38,32 @@
 						</div>			
 					</div>
 				</div>
-			</div>	
-			<nav>		  
+			</div>
+			<nav>
 				<div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1">
-					<div class="container">									
+					<div class="container">
 						<?php if($this->session->userdata('userid')){ ?>
 							<ul class="nav custom">
 								<?php if(current_url() == base_url()){?>
 									<li><a class="active" href="<?php echo base_url(); ?>dashboard">Home</a></li>
 									<!--<li><a href="#what">Buy or Sell Bitcoin Instantly</a></li>-->
 									<li><a href="#location">Bitcoin ATM Locations</a></li>
-									<li><a href="#contact">Contact</a></li>			
+									<li><a href="#contact">Contact</a></li>
 								<?php } else { ?>
 									<li><a href="<?php echo base_url(); ?>dashboard">Home</a></li>
 									<!--<li><a href="<?php echo base_url(); ?>#what">Buy or Sell Bitcoin Instantly</a></li>-->
 									<li><a href="<?php echo base_url(); ?>#location">Bitcoin ATM Locations</a></li>
-									<li><a href="<?php echo base_url(); ?>#contact">Contact</a></li>	
+									<li><a href="<?php echo base_url(); ?>#contact">Contact</a></li>
 								<?php } ?>
-							</ul>		
+							</ul>
 							<ul class="nav custom navbar-right">
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome 
-									<?php 
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome
+									<?php
 									if($this->session->userdata('username'))
-									{ 
+									{
 									echo $this->session->userdata('username');
-									} else { ?> 
+									} else { ?>
 									Username
 									<?php } ?>
 								<span class="caret"></span></a>
@@ -73,39 +73,51 @@
 									</ul>
 								</li>
 							</ul>
-						
+
 							<?php } else {?>
 							<ul class="nav custom">
 								<?php if(current_url() == base_url()){?>
 									<li><a class="active" href="#banner">Home</a></li>
 									<!--<li><a href="#what">Buy or Sell Bitcoin Instantly</a></li>-->
 									<li><a href="#location">Bitcoin ATM Locations</a></li>
-									<li><a href="#contact">Contact</a></li>			
+									<li><a href="#contact">Contact</a></li>
 								<?php } else { ?>
 									<li><a href="<?php echo base_url(); ?>#banner">Home</a></li>
 									<!--<li><a href="<?php echo base_url(); ?>#what">Buy or Sell Bitcoin Instantly</a></li>-->
 									<li><a href="<?php echo base_url(); ?>#location">Bitcoin ATM Locations</a></li>
-									<li><a href="<?php echo base_url(); ?>#contact">Contact</a></li>	
+									<li><a href="<?php echo base_url(); ?>#contact">Contact</a></li>
 								<?php } ?>
 							</ul>
 							<ul class="nav custom navbar-right">
 								<li><a href="<?php echo base_url();?>login">Sign in</a></li>
-								<li><a href="<?php echo base_url();?>register">Sign up</a></li>							
+								<li><a href="<?php echo base_url();?>register">Sign up</a></li>
 							</ul>
 							<?php } ?>
-					</div>					   					  
+					</div>
 				</div>
 			</nav>
-		</header>
+        </header>
         <?php if ($this->session->userdata('username')) : ?>
-        <div class="user-toolbar">
-            <div class="container">
-                <div class="clearfix">
-                    <div class="pull-left">
-                        <button class="btn-primary username">
-                            <?php echo $this->session->userdata('username'); ?>
-                        </button>
-                        <div class="balances">
+            <div class="user-toolbar">
+                <div class="container">
+                    <div class="clearfix">
+
+                        <div class="operations text-uppercase pull-left">
+
+                            <a href="#" class="deposit btn">
+                                deposit
+                            </a>
+                            <a href="#" class="withdraw btn">
+                                withdraw
+                            </a>
+                            <a href="#" class="instant-buy btn">
+                                instant buy
+                            </a>
+                            <a href="#" class="instant-sell btn">
+                                instant sell
+                            </a>
+                        </div>
+                        <div class="balances pull-left">
                             <div>
                                 <i class="fa fa-btc"></i>
                                 0.000000
@@ -117,32 +129,12 @@
                         </div>
                     </div>
 
-                    <div class="pull-right operations text-uppercase">
-                        <div class="clearfix">
-                            <div class="pull-right">
-                                <a href="#" class="deposit btn">
-                                    deposit
-                                </a>
-                                <a href="#" class="withdraw btn">
-                                    withdraw
-                                </a>
-                                <a href="#" class="instant-buy btn">
-                                    instant buy
-                                </a>
-                                <a href="#" class="instant-sell btn">
-                                    instant sell
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
             </div>
-        </div>
         <?php endif; ?>
         <div class="currency-panel text-uppercase">
             <div class="container clearfix">
-                <ul class="list-unstyled list-inline pull-right">
+                <ul class="list-unstyled list-inline">
                     <li>
                         DOGE/BTC: 3.298398
                     </li>
@@ -164,4 +156,3 @@
                 </ul>
             </div>
         </div>
-	

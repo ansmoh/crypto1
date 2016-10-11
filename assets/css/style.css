@@ -555,13 +555,6 @@ a.dropdown-toggle{display:inline-block !important; float:none;}
     background: #959595;
 }
 
-.user-toolbar .username {
-    box-shadow: none;
-    outline: none;
-    border: solid 1px #000;
-    background: #005b7f;
-}
-
 .user-toolbar .balances{
     display: inline-block;
     margin-left: 20px;
@@ -576,7 +569,7 @@ a.dropdown-toggle{display:inline-block !important; float:none;}
 
 .user-toolbar .operations .btn {
     padding: 2px 10px;
-    margin-left: 10px;
+    margin-right: 10px;
     border: solid 1px #000;
     border-radius: 0;
 }
@@ -614,10 +607,37 @@ a.dropdown-toggle{display:inline-block !important; float:none;}
 }
 
 .currency-panel li {
-    margin-left: 10px;
+    padding: 0;
+    margin-right: 15px;
 }
 
 /*************************** Dashboard *********************************/
+
+.dashboard-index h3 {
+    color: #1b518f;
+    font-weight: 300;
+}
+
+.order-tables-module, .trade-history-module,
+.active-orders-module, .market-depth-chart-module{
+    margin-bottom: 30px;
+}
+
+
+.title-with-info{
+    padding: 10px 15px;
+}
+
+.title-with-info .title {
+    color: #2b5d97;
+    font-size: 20px;
+}
+
+.title-with-info .info {
+    margin-top: 6px;
+    color: #747a7f;
+    font-size: 12px;
+}
 
 .state-notification {
     margin-bottom: 20px;
@@ -669,7 +689,7 @@ a.dropdown-toggle{display:inline-block !important; float:none;}
 
 /******* Order Forms *******/
 
-.order-forms {
+.order-forms-module {
     margin-bottom: 30px;
     padding: 45px 15px 60px;
     border: solid 1px #e7eaee;
@@ -678,23 +698,23 @@ a.dropdown-toggle{display:inline-block !important; float:none;}
     border-radius: 8px;
 }
 
-.order-forms .form-panels-wrapper{
+.order-forms-module .form-panels-wrapper{
     position: relative;
 }
 
-.order-forms .refresh-icon{
+.order-forms-module .refresh-icon{
     position: absolute;
     left: 50%;
     margin-left: -77px;
     top: 50%;
     margin-top: -90px;
 }
-.order-forms .refresh-icon .fa{
+.order-forms-module .refresh-icon .fa{
     color: #e9eef1;
     font-size: 180px;
 }
 
-.order-forms .refresh-icon .text-cont{
+.order-forms-module .refresh-icon .text-cont{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -709,78 +729,67 @@ a.dropdown-toggle{display:inline-block !important; float:none;}
     color: #ccc;
 }
 
-.order-forms h3 {
-
-    color: #1b518f;
+.order-forms-module .panel-heading .title-with-info{
+    padding: 0;
 }
-.order-forms .buy-btc-panel,
-.order-forms .sell-btc-panel{
+
+.order-forms-module .buy-btc-panel,
+.order-forms-module .sell-btc-panel{
     margin-top: 20px;
     margin-bottom: 0;
 }
 
-.order-forms .buy-btc-panel {
+.order-forms-module .buy-btc-panel {
     margin-right: 25px;
 }
 
-.order-forms .sell-btc-panel {
+.order-forms-module .sell-btc-panel {
     margin-left: 25px;
 }
 
-.order-forms .panel-heading .title {
-    color: #2b5d97;
-    font-size: 20px;
-}
-
-.order-forms .panel-heading .balance {
-    margin-top: 6px;
-    color: #747a7f;
-    font-size: 12px;
-}
-
-.order-forms label,
-.order-forms .input-group .input-group-addon,
-.order-forms .message,
-.order-forms .total-sum {
+.order-forms-module label,
+.order-forms-module .input-group .input-group-addon,
+.order-forms-module .message,
+.order-forms-module .total-sum {
     color: #374a5c;
 }
 
-.order-forms .message {
+.order-forms-module .message {
     margin-top: 10px;
 }
 
-.order-forms .fee-sum {
+.order-forms-module .fee-sum {
     color: #A0A0A0;
 }
 
-.order-forms label {
+.order-forms-module label {
     font-weight: normal;
 }
 
-.order-forms .input-group .form-control {
+.order-forms-module .input-group .form-control {
     border-radius: 4px 0 0 4px;
 }
 
-.order-forms .input-group .input-group-addon {
+.order-forms-module .input-group .input-group-addon {
     background: #fff;
 }
 
-.order-forms .form-group.error .form-control,
-.order-forms .form-group.error .input-group-addon {
+.order-forms-module .form-group.error .form-control,
+.order-forms-module .form-group.error .input-group-addon {
     border-color: #c00;
 }
 
-.order-forms .form-group.error .form-control,
-.order-forms .form-group.error .input-group-addon,
-.order-forms .form-group.error label {
+.order-forms-module .form-group.error .form-control,
+.order-forms-module .form-group.error .input-group-addon,
+.order-forms-module .form-group.error label {
     color: #c00;
 }
 
-.order-forms .form-group.error .input-group-addon {
+.order-forms-module .form-group.error .input-group-addon {
     background: #f3dfde;
 }
 
-.order-forms .btn {
+.order-forms-module .btn {
     margin-top: 40px;
     outline: none;
     background-image: linear-gradient(to bottom, #529dd7, #2689d5);
@@ -789,22 +798,106 @@ a.dropdown-toggle{display:inline-block !important; float:none;}
     color: #fff;
 }
 
-.table-module{
-    margin-bottom: 30px;
+.table.table-rounded{
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 5px;
+}
+
+.table.table-rounded thead tr th:first-child{
+    border-top-left-radius: 5px;
+}
+
+.table.table-rounded thead tr th:last-child{
+    border-top-right-radius: 5px;
+}
+
+.table.table-rounded tbody tr:last-child td:first-child{
+    border-bottom-left-radius: 5px;
+}
+
+.table.table-rounded tbody tr:last-child td:last-child{
+    border-bottom-right-radius: 5px;
+}
+
+.order-tables-module .title-with-info{
+    padding-left: 0;
+}
+
+.dashboard-table.table thead tr th,
+.dashboard-table.table tbody tr td{
+    padding: 7px;
+    color: #374a5c;
+    font-weight: normal;
+    background: none;
+}
+
+.order-tables-module .sell-orders-table{
+    padding-right: 25px;
+}
+
+.order-tables-module .buy-orders-table{
+    padding-left: 25px;
+}
+
+.active-orders-module h3{
+    margin-top: 0;
+    margin-right: 100px;
+}
+
+.active-orders-module .btn{
+    padding: 0 5px;
+    height: 22px;
+    background: linear-gradient(to bottom, #e02c2a, #b00c0c);
+    border-color: #b91716;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+    box-shadow: none;
+    font-size: 11px;
+}
+
+.market-depth-chart{
+    height: 250px;
+}
+
+.market-depth-chart-module .chart-controls{
+    font-size: 0;
+}
+
+.market-depth-chart-module .chart-controls .btn{
+    width: 80px;
+    padding: 0;
+    font-size: 18px;
+}
+
+.market-depth-chart-module .chart-controls .btn:first-child{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.market-depth-chart-module .chart-controls .btn:last-child{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 @media (max-width: 767px) {
-    .order-forms .buy-btc-panel,
-    .order-forms .sell-btc-panel {
+    .order-forms-module .buy-btc-panel,
+    .order-forms-module .sell-btc-panel {
         margin-left: 0;
         margin-right: 0;
     }
 
-    .order-forms .sell-btc-panel {
+    .order-forms-module .sell-btc-panel {
         margin-top: 80px;
     }
 
-    .order-forms .refresh-icon {
+    .order-forms-module .refresh-icon {
         top: 51%;
+    }
+
+    .order-tables-module .sell-orders-table,
+    .order-tables-module .buy-orders-table{
+        padding: 0;
     }
 }

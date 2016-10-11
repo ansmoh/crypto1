@@ -4,6 +4,9 @@
 
     $(document).ready(function () {
 
+        if (!$('.dashboard-index').length) {
+            return;
+        }
 
         $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-ohlcv.json&callback=?', function (data) {
 
@@ -186,6 +189,101 @@
             });
         });
 
+        $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
+
+            var firstSeries = [];
+            var secondSeries = [];
+            var dataLength = data.length;
+            var dataHalf = dataLength / 2;
+            var minVal = data[1][1];
+            var marketDepthControls = $('.market-depth-chart-module .chart-controls .change-chart-type');
+            var marketDepthChart = $('.market-depth-chart');
+
+            for (var i = 0; i < dataLength; i++) {
+
+                if (data[i][1] < minVal) {
+                    minVal = data[i][1];
+                }
+
+                if (i > dataHalf) {
+                    secondSeries.push(data[i]);
+                } else {
+                    firstSeries.push(data[i])
+                }
+            }
+
+            var marketDepthOption = {
+                title: {
+                    text: ''
+                },
+                chart: {
+                    type: $('.market-depth-chart-module .chart-controls .change-chart-type.active').data('type'),
+                    zoomType: 'x'
+                },
+                xAxis: {
+                    type: 'linear'
+                },
+                yAxis: {
+                    min: minVal,
+                    title: {
+                        text: ''
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    area: {
+
+                        marker: {
+                            radius: 2
+                        },
+                        lineWidth: 1,
+                        states: {
+                            hover: {
+                                lineWidth: 1
+                            }
+                        },
+                        threshold: null
+                    }
+                },
+
+                series: [{
+                    color: '#dee9f8',
+                    lineColor: '#89afe5',
+                    name: 'plot',
+                    data: firstSeries
+                },
+                    {
+                        color: '#e5efd3',
+                        lineColor: '#a1c85c',
+                        name: 'plot',
+                        data: secondSeries
+                    }
+                ]
+            };
+
+            marketDepthChart.highcharts(marketDepthOption);
+
+            marketDepthControls
+                .on('click', function (e) {
+                    var $this = $(this);
+
+                    if($this.hasClass('active')){
+                        return false;
+                    }
+
+                    marketDepthControls.removeClass('active');
+
+                    $this.addClass('active');
+
+                    marketDepthOption.chart.type = $this.data('type');
+
+                    marketDepthChart.highcharts(marketDepthOption);
+
+                })
+
+        });
 
     });
 
