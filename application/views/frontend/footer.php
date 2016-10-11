@@ -148,7 +148,15 @@ window.__lc.license = 7570511;
 	 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 	<script src="<?php echo base_url()?>assets/js/jquery.event.move.js"></script>
 	<script src="<?php echo base_url()?>assets/js/responsive-slider.js"></script>
-	 <script>	
+
+<!-- High Charts Start-->
+
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+
+<script src="<?php echo base_url()?>assets/js/frontend.js"></script>
+
+<script>
 	jQuery("#contact_msg").hide();
 	jQuery(function() {
     jQuery("#register-form").validate({    

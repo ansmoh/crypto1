@@ -7,9 +7,9 @@
 		<link rel="icon" type="image/ico" sizes="" href="<?php echo base_url();?>assets/images/icon/favicon.ico">
 		<title>EZBTC:: Buy or Sell Bitcoin Instantly</title>    
 		<link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
-		<link href="<?php echo base_url();?>assets/css/style.css?ver=1.0.1" rel="stylesheet">
-		<link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">   
+		<link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">
 		<link href="<?php echo base_url();?>assets/css/responsive-slider.css" rel="stylesheet" media="screen">
+		<link href="<?php echo base_url();?>assets/css/style.css?ver=1.0.1" rel="stylesheet">
 	</head>
 	<body>
 	<div id="banner">
@@ -97,4 +97,71 @@
 				</div>
 			</nav>
 		</header>
+        <?php if ($this->session->userdata('username')) : ?>
+        <div class="user-toolbar">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <button class="btn-primary username">
+                            <?php echo $this->session->userdata('username'); ?>
+                        </button>
+                        <div class="balances">
+                            <div>
+                                <i class="fa fa-btc"></i>
+                                0.000000
+                            </div>
+                            <div>
+                                <i class="fa fa-dollar"></i>
+                                0.00
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pull-right operations text-uppercase">
+                        <div class="clearfix">
+                            <div class="pull-right">
+                                <a href="#" class="deposit btn">
+                                    deposit
+                                </a>
+                                <a href="#" class="withdraw btn">
+                                    withdraw
+                                </a>
+                                <a href="#" class="instant-buy btn">
+                                    instant buy
+                                </a>
+                                <a href="#" class="instant-sell btn">
+                                    instant sell
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <?php endif; ?>
+        <div class="currency-panel text-uppercase">
+            <div class="container clearfix">
+                <ul class="list-unstyled list-inline pull-right">
+                    <li>
+                        DOGE/BTC: 3.298398
+                    </li>
+                    <li>
+                        LTC/BTC: 0.004733
+                    </li>
+                    <li>
+                        LTC/CAD: 3.485948
+                    </li>
+                    <li>
+                        ETH/CAD: 15.2948
+                    </li>
+                    <li>
+                        ETH/BTC: 0.0193847
+                    </li>
+                    <li>
+                        BTC/CAD: 812.8087
+                    </li>
+                </ul>
+            </div>
+        </div>
 	

@@ -1,92 +1,632 @@
 <?php include 'header.php' ?>
-<?php include 'banner.php' ?>
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-global $result; $url;
-foreach($content as $key => $value)
-{    
-  $result = $value;  
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+global $result;
+$url;
+foreach ($content as $key => $value) {
+    $result = $value;
 }
-foreach($page_url as $key => $value)
-{    
-  $url = $value;  
+foreach ($page_url as $key => $value) {
+    $url = $value;
 }
 ?>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-3">
-			<div class="left_bar">		
-				<?php include 'left_menu.php'; ?>	
-			</div>
-		</div>
-		<div class="col-sm-9 p_t20 add_dash">
-			
-		<div class="row">
-			<div class="col-xs-4 text-center">
-			<?php if($size1 != 0) { ?>
-				<a href="<?php echo base_url(); ?>dashboard/buy_bitcoin">
-					<img alt="" src="<?php echo base_url(); ?>assets/images/add_money.png">	<br>
-					<span>Buy Bitcoin</span>
-				</a>
-			<?php } else { ?>
-				<a href="javascript:void()" onclick="buybit()">
-					<img alt="" src="<?php echo base_url(); ?>assets/images/add_money.png"><br>		
-					<span>Buy Bitcoin</span>
-				</a>
-			<?php } ?>
-			</div>
-			<div class="col-xs-4 text-center">
-				<?php if($size1 != 0) { ?>
-					<a href="<?php echo base_url(); ?>dashboard/sell_bitcoin">
-						<img alt="" src="<?php echo base_url(); ?>assets/images/with_dr.png"><br>
-						<span>Sell Bitcoin</span>
-					</a>
-				<?php } else { ?>
-					<a href="javascript:void()" onclick="sellbit()">
-						<img alt="" src="<?php echo base_url(); ?>assets/images/with_dr.png"><br>
-						<span>Sell Bitcoin</span>
-				<?php } ?>
-			</div>
-			<div class="col-xs-4 text-center">
-				<a href="<?php echo base_url(); ?>dashboard/send_bitcoin">
-				<img alt="" src="<?php echo base_url(); ?>assets/images/send_bit.png">
-				<br>
-				<span>Send Bitcoin</span>
-				</a>
-			</div>
-		</div>
-	
-			<div class="well">
-			<div class="p_20 full_wid">
-				<?php if($size1 != 0) { ?>	
-					<?php if(current_url() == $url){ ?>
-						<p><?php print_r($result); ?></p>
-					<?php } ?>				
-					<!--<p>Thank you for becoming a verified member of EZBTC. Please place your order to either to buy, sell or send Bitcoin using the icons found on screen.</p><br/><p>If you require assistance, you can contact us using live chat, calling us or via email. We are always happy to help.</p>-->	
-				<?php } else {?>	
-					<div id="para1">
-						
-						<p>We are currently still developing your personal dashboard. In the meantime you and buy and sell bitcoin using the icons above or the links to the left.</p><br/><p>In order to buy or sell on ezBtc you first need to verify your account by clicking the link and providing the documentation requested.</p><br/><p>Verifications are done within 12 hours unless you specify a later date for your video chat.</p><br/><p>Thanks for joining ezBtc, keep coming back and watch as we keep developing our platform. We have a lot planned for this space.</p>
-					</div>
-				<?php } ?>		
-			<p id="para_bit"></p>
-			<p id="para_sell"></p>
-			</div></div>
-		</div>
-	</div>
+
+<div class="dashboard-index">
+
+    <div class="container clearfix">
+        <div class="row">
+            <div class="pull-right col-sm-7">
+                <div class="state-notification">
+                    Welcome to Canada’s new exchange! While this may look finished a lot of functions are not.
+                    Please read the status updates page for info on current functionality.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="stock-chart-module">
+            <div class="table-responsive">
+                <table class="table chart-stats">
+                    <tbody>
+                    <tr>
+                        <td class="currency-code">BTC/CAD</td>
+                        <td>
+                            <div class="small">Last Price:</div>
+                            <i class="fa fa-dollar"></i>619.2237
+                        </td>
+                        <td>
+                            <div class="small">Daily change:</div>
+                            <i class="fa fa-dollar"></i>619.2237
+                        </td>
+                        <td>
+                            <div class="small">Today's open:</div>
+                            <i class="fa fa-dollar"></i>619.2237
+                        </td>
+                        <td>
+                            <div class="small">24h volume:</div>
+                            <i class="fa fa-btc"></i>619.2237
+                        </td>
+                        <td class="chart-btn-td">
+                            <div class="clearfix">
+                                <button class="btn btn-default pull-right chart-btn">
+                                    <i class="fa fa-bar-chart"></i>
+                                    Chart
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="stock-chart-pane"></div>
+        </div>
+
+        <div class="order-forms">
+            <h3 class="text-center">
+                Trade: buy or sell BTC
+            </h3>
+            <div class="row form-panels-wrapper">
+                <div class="refresh-icon">
+                    <i class="fa fa-refresh"></i>
+                    <div class="text-cont">or</div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="panel panel-default buy-btc-panel">
+                        <div class="panel-heading">
+                            <div class="clearfix">
+                                <div class="pull-left title">
+                                    Buy BTC:
+                                </div>
+                                <div class="balance pull-right">
+                                    <i class="fa fa-clock-o"></i> Your USD Balance: 0.49
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form class="buy-btc">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="btc-amount-buy">Amount to Buy</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="btc-amount-buy"
+                                                       name="btc-amount-buy"/>
+                                                <div class="input-group-addon">BTC</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group error">
+                                            <label for="btc-price-buy">Amount to Buy</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="btc-price-buy"
+                                                       name="btc-price-buy"/>
+                                                <div class="input-group-addon">USD</div>
+                                            </div>
+                                            <div class="message">
+                                                Your price differs from the current market price significantly
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="submit" class="btn">
+                                            Place order
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div class="row operation-info">
+                                    <div class="col-md-4 total-sum">
+                                        Total: 0.0000 USD
+                                    </div>
+                                    <div class="col-md-4 fee-sum">
+                                        (Fee: 0.00 USD)
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="panel panel-default sell-btc-panel">
+                        <div class="panel-heading">
+                            <div class="clearfix">
+                                <div class="title pull-left">
+                                    Sell BTC:
+                                </div>
+                                <div class="balance pull-right">
+                                    <i class="fa fa-clock-o"></i> Your BTC Balance: 0.00000000000
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form class="sell-btc">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="btc-amount-sell">Amount to Buy</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="btc-amount-sell"
+                                                       name="btc-amount-sell"/>
+                                                <div class="input-group-addon">BTC</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group error">
+                                            <label for="btc-price-sell">Amount to Buy</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="btc-price-sell"
+                                                       name="btc-price-sell"/>
+                                                <div class="input-group-addon">USD</div>
+                                            </div>
+                                            <div class="message">
+                                                Your price differs from the current market price significantly
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="submit" class="btn">
+                                            Place order
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div class="row operation-info">
+                                    <div class="col-md-4 total-sum">
+                                        Total: 0.0000 USD
+                                    </div>
+                                    <div class="col-md-4 fee-sum">
+                                        (Fee: 0.00 USD)
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-module">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Price per BTC</th>
+                                <th>BTC Amount</th>
+                                <th>Total: (USD)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Price per BTC</th>
+                                <th>BTC Amount</th>
+                                <th>Total: (USD)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            <tr>
+                                <td>619.192</td>
+                                <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                                <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-module">
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Amount BTC</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-08 08:30:56</td>
+                        <td>SELL</td>
+                        <td><i class="fa fa-btc"></i> 0.2456789 </td>
+                        <td>619.192</td>
+                        <td><i class="fa fa-dollar"></i> 172.1346 </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
 </div>
+
 
 <?php include 'footer.php' ?>
 
 <script>
-function buybit(){
-	jQuery('#para_bit').html("Please verify your account to Buy Bitcoin.").show();
-	jQuery('#para1').hide();
-	jQuery('#para_sell').hide();
-}
+    function buybit() {
+        jQuery('#para_bit').html("Please verify your account to Buy Bitcoin.").show();
+        jQuery('#para1').hide();
+        jQuery('#para_sell').hide();
+    }
 
-function sellbit(){
-	jQuery('#para_sell').html("Please verify your account to Sell Bitcoin.").show();
-	jQuery('#para1').hide();
-	jQuery('#para_bit').hide();
-}
+    function sellbit() {
+        jQuery('#para_sell').html("Please verify your account to Sell Bitcoin.").show();
+        jQuery('#para1').hide();
+        jQuery('#para_bit').hide();
+    }
 </script>
