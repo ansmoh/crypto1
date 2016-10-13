@@ -57,7 +57,7 @@
 								<?php } ?>
 							</ul>
 							<ul class="nav custom navbar-right">
-								<li class="dropdown">
+								<li class="dropdown user-menu">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome
 									<?php
 									if($this->session->userdata('username'))
@@ -68,8 +68,15 @@
 									<?php } ?>
 								<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="<?php echo base_url(); ?>dashboard">My Dashboard</a></li>
-										<li><a href="<?php echo base_url(); ?>login/logout">Logout</a></li>
+										<li><a href="/dashboard">My Dashboard</a></li>
+										<li><a href="/dashboard/account_activate">Verify My Account</a></li>
+										<li><a href="/dashboard/transaction">Send Bitcoin</a></li>
+										<li><a href="/dashboard/sell_bitcoin">Send Bitcoin</a></li>
+										<li><a href="/dashboard/payment_method">Payment Methods</a></li>
+										<?php if($this->session->userdata('role') == '3'): ?>
+											<li><a href="/dashboard/btc_investor">BTCPop Investor Information</a></li>
+										<?php endif; ?>
+										<li><a href="/login/logout">Logout</a></li>
 									</ul>
 								</li>
 							</ul>
