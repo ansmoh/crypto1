@@ -1,0 +1,356 @@
+
+/************************** New Header *********************************/
+
+.user-toolbar {
+  padding: 0 0 8px;
+  background: #959595;
+}
+
+.user-toolbar .balances{
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.user-toolbar .balances div {
+  display: inline-block;
+  font-size: 17px;
+  color: #000;
+  margin-right: 10px;
+}
+
+.user-toolbar .operations .btn {
+  padding: 2px 10px;
+  margin-top: 15px;
+  margin-right: 10px;
+  border: solid 1px #000;
+  border-radius: 0;
+}
+
+.user-toolbar .operations .deposit,
+.user-toolbar .operations .withdraw {
+  color: #fff;
+}
+
+.user-toolbar .operations .instant-buy,
+.user-toolbar .operations .instant-sell {
+  color: #000;
+  background: #fff;
+}
+
+.user-toolbar .operations .deposit {
+  background: #f08757;
+}
+
+.user-toolbar .operations .withdraw {
+  background: #b7b7b7;
+}
+
+.currency-panel {
+  font-size: 13px;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  background: #f08757;
+}
+
+.currency-panel ul {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.currency-panel li {
+  padding: 0;
+  margin-right: 15px;
+}
+
+/*************************** Dashboard *********************************/
+
+.dashboard-index h3 {
+  color: #1b518f;
+  font-weight: 300;
+}
+
+.order-tables-module, .trade-history-module,
+.active-orders-module, .market-depth-chart-module{
+  margin-bottom: 30px;
+}
+
+
+.title-with-info{
+  padding: 10px 15px;
+}
+
+.title-with-info .title {
+  color: #2b5d97;
+  font-size: 20px;
+}
+
+.title-with-info .info {
+  margin-top: 6px;
+  color: #747a7f;
+  font-size: 12px;
+}
+
+.state-notification {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: solid 1px #000;
+}
+
+.stock-chart-module {
+  margin-bottom: 60px;
+}
+
+.stock-chart-module .table.chart-stats {
+  width: 100%;
+}
+
+.stock-chart-module .table.chart-stats td {
+  padding: 0 5px;
+  border: none;
+  color: #000;
+  vertical-align: middle;
+  font-weight: normal;
+}
+.stock-chart-module .table.chart-stats .currency-code,
+.stock-chart-module .table.chart-stats .chart-btn-td{
+  padding: 0;
+}
+.stock-chart-module .table.chart-stats td .small {
+  color: #A0A0A0;
+}
+
+.stock-chart-module .table.chart-stats td i {
+  margin-right: 5px;
+}
+
+.stock-chart-module .table.chart-stats .currency-code {
+  font-size: 30px;
+}
+
+.stock-chart-module .table.chart-stats .chart-btn {
+  min-width: 100px;
+  color: #000;
+}
+
+.stock-chart-module .stock-chart-pane {
+  margin-top: 20px;
+  height: 350px;
+  width: 100%;
+}
+
+/******* Order Forms *******/
+
+.order-forms-module {
+  margin-bottom: 30px;
+  padding: 45px 15px 60px;
+  border: solid 1px #e7eaee;
+  box-shadow: 0 0 0 1px #eceef1;
+  background: #f7f8f9;
+  border-radius: 8px;
+}
+
+.order-forms-module .form-panels-wrapper{
+  position: relative;
+}
+
+.order-forms-module .refresh-icon{
+  position: absolute;
+  left: 50%;
+  margin-left: -77px;
+  top: 50%;
+  margin-top: -90px;
+}
+.order-forms-module .refresh-icon .fa{
+  color: #e9eef1;
+  font-size: 180px;
+}
+
+.order-forms-module .refresh-icon .text-cont{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  margin-top: -17px;
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+  padding-top: 6px;
+  color: #ccc;
+}
+
+.order-forms-module .panel-heading .title-with-info{
+  padding: 0;
+}
+
+.order-forms-module .buy-btc-panel,
+.order-forms-module .sell-btc-panel{
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.order-forms-module .buy-btc-panel {
+  margin-right: 25px;
+}
+
+.order-forms-module .sell-btc-panel {
+  margin-left: 25px;
+}
+
+.order-forms-module label,
+.order-forms-module .input-group .input-group-addon,
+.order-forms-module .message,
+.order-forms-module .total-sum {
+  color: #374a5c;
+}
+
+.order-forms-module .message {
+  margin-top: 10px;
+}
+
+.order-forms-module .fee-sum {
+  color: #A0A0A0;
+}
+
+.order-forms-module label {
+  font-weight: normal;
+}
+
+.order-forms-module .input-group .form-control {
+  border-radius: 4px 0 0 4px;
+}
+
+.order-forms-module .input-group .input-group-addon {
+  background: #fff;
+}
+
+.order-forms-module .form-group.error .form-control,
+.order-forms-module .form-group.error .input-group-addon {
+  border-color: #c00;
+}
+
+.order-forms-module .form-group.error .form-control,
+.order-forms-module .form-group.error .input-group-addon,
+.order-forms-module .form-group.error label {
+  color: #c00;
+}
+
+.order-forms-module .form-group.error .input-group-addon {
+  background: #f3dfde;
+}
+
+.order-forms-module .btn {
+  margin-top: 40px;
+  outline: none;
+  background-image: linear-gradient(to bottom, #529dd7, #2689d5);
+  border: solid 1px #057ad3;
+  box-shadow: inset 0 1px 0 0 #7db3dd;
+  color: #fff;
+}
+
+.table.table-rounded{
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 5px;
+}
+
+.table.table-rounded thead tr th:first-child{
+  border-top-left-radius: 5px;
+}
+
+.table.table-rounded thead tr th:last-child{
+  border-top-right-radius: 5px;
+}
+
+.table.table-rounded tbody tr:last-child td:first-child{
+  border-bottom-left-radius: 5px;
+}
+
+.table.table-rounded tbody tr:last-child td:last-child{
+  border-bottom-right-radius: 5px;
+}
+
+.order-tables-module .title-with-info{
+  padding-left: 0;
+}
+
+.dashboard-table.table thead tr th,
+.dashboard-table.table tbody tr td{
+  padding: 7px;
+  color: #374a5c;
+  font-weight: normal;
+  background: none;
+}
+
+.order-tables-module .sell-orders-table{
+  padding-right: 25px;
+}
+
+.order-tables-module .buy-orders-table{
+  padding-left: 25px;
+}
+
+.active-orders-module h3{
+  margin-top: 0;
+  margin-right: 100px;
+}
+
+.active-orders-module .btn{
+  padding: 0 5px;
+  height: 22px;
+  background: linear-gradient(to bottom, #e02c2a, #b00c0c);
+  border-color: #b91716;
+  color: #fff;
+  font-weight: bold;
+  outline: none;
+  box-shadow: none;
+  font-size: 11px;
+}
+
+.market-depth-chart{
+  height: 250px;
+}
+
+.market-depth-chart-module .chart-controls{
+  font-size: 0;
+}
+
+.market-depth-chart-module .chart-controls .btn{
+  width: 80px;
+  padding: 0;
+  font-size: 18px;
+}
+
+.market-depth-chart-module .chart-controls .btn:first-child{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.market-depth-chart-module .chart-controls .btn:last-child{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+@media (max-width: 767px) {
+  .order-forms-module .buy-btc-panel,
+  .order-forms-module .sell-btc-panel {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .order-forms-module .sell-btc-panel {
+    margin-top: 80px;
+  }
+
+  .order-forms-module .refresh-icon {
+    top: 51%;
+  }
+
+  .order-tables-module .sell-orders-table,
+  .order-tables-module .buy-orders-table{
+    padding: 0;
+  }
+}

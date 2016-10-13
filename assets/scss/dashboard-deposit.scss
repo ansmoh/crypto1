@@ -1,0 +1,49 @@
+@import "variables";
+
+/*************** Deposit Page ******************/
+
+.dashboard-deposit {
+
+  h2 {
+    color: $base-color-orange;
+  }
+
+  .wallet-provider-list {
+    max-width: 150px;
+
+    a {
+      padding: 6px 10px 6px 20px;
+      display: block;
+      background: #101e23;
+      color: #959595;
+      border: solid 2px #959595;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  }
+
+  .qr-wrapper {
+    margin-bottom: 5px;
+    padding: 5px 0 10px;
+    border-bottom: solid 2px #eef1f2;
+    border-top: solid 2px #eef1f2;
+  }
+
+  .qr-desc, .page-desc {
+    color: #959595
+  }
+
+  .wallet-hash-wrapper {
+    padding: 5px 3px;
+    background: #f8f2f4;
+    display: inline-block;
+    border-radius: 8px;
+  }
+
+  .wallet-hash {
+    line-height: 11px;
+    color: $base-color-red;
+    border-bottom: solid 1px #7dd1ba;
+  }
+
+}

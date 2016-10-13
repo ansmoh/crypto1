@@ -558,6 +558,23 @@ class Dashboard extends MY_Controller {
 	{
 		$this->load->view('frontend/message_account',array('message' => $message));	
 	}
+
+    public function deposit(){
+
+        $this->checkAuth();
+
+        $this->load->view('frontend/dashboard_deposit', array(
+            'userdata' => $this->session->userdata
+        ));
+
+    }
+
+    private function checkAuth(){
+        if(!$this->session->userdata('userid'))
+        {
+            redirect(base_url('login'));
+        }
+    }
 }
 
 ?>

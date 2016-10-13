@@ -111,7 +111,7 @@
 
                         <div class="operations text-uppercase pull-left">
 
-                            <a href="#" class="deposit btn">
+                            <a href="/dashboard/deposit" class="deposit btn">
                                 deposit
                             </a>
                             <a href="#" class="withdraw btn">

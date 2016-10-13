@@ -148,6 +148,8 @@ class Login extends MY_Controller {
 	{
 		$name =  $this->input->post('email_username');
 		$check_email = valid_email($name);
+		$blockIo = getBlockIoService();
+
 		if($check_email){
 			$data = array(	'u.email'=>  $this->input->post('email_username'),           
 							'u.password'=>  md5($this->input->post('password')),
@@ -175,7 +177,7 @@ class Login extends MY_Controller {
 
 				/* last login */
 				$this->authentication->last_login();
-				$block_io_data = get_wallet_data($this->session->userdata('user_email'));
+				$block_io_data = $blockIo->get_wallet_data($this->session->userdata('user_email'));
 				$this->session->set_userdata($block_io_data);
 				if($this->session->userdata('role') == 1){
 					redirect(base_url('admin/dashboard'));
@@ -214,7 +216,7 @@ class Login extends MY_Controller {
 
 				/* last login */
 				$this->authentication->last_login();
-				$block_io_data = get_wallet_data($this->session->userdata('user_email'));
+				$block_io_data = $blockIo->get_wallet_data($this->session->userdata('user_email'));
 				$this->session->set_userdata($block_io_data);
 				if($this->session->userdata('role') == 1){
 					redirect(base_url('admin/dashboard'));
