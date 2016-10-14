@@ -117,10 +117,10 @@
                             <a href="#" class="withdraw btn">
                                 withdraw
                             </a>
-                            <a href="#" class="instant-buy btn">
+                            <a href="/dashboard/buy_bitcoin" class="instant-buy btn">
                                 instant buy
                             </a>
-                            <a href="#" class="instant-sell btn">
+                            <a href="/dashboard/sell_bitcoin" class="instant-sell btn">
                                 instant sell
                             </a>
                         </div>
