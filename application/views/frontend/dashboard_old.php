@@ -15,7 +15,7 @@ foreach($page_url as $key => $value)
 	<div class="row">
 		<div class="col-sm-3">
 			<div class="left_bar">
-				<?php include 'left_menu.php'; ?>
+				
 			</div>
 		</div>
 		<div class="col-sm-9 p_t20 add_dash">

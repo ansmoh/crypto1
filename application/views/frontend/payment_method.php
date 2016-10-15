@@ -1,6 +1,5 @@
 <?php include 'header.php' ?>
 </div>
-<?php include 'banner.php' ?>
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 global $result; $url;
 foreach($content as $key => $value)
@@ -15,9 +14,7 @@ foreach($page_url as $key => $value)
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3">
-			<div class="left_bar">
-				<?php include 'left_menu.php'; ?>
-			</div>
+			
 		</div>
 		<div class="col-sm-9 p_t20">
 			<div class="well">

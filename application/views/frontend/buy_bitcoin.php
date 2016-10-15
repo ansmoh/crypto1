@@ -1,42 +1,10 @@
 <?php include 'header.php' ?>
 
-<?php include 'banner.php' ?>
-
-<div class="container">
+<div class="container" style="width:100%;">
 	<div class="row">
-		<div class="col-sm-3">
-			<div class="left_bar">
-				<?php include 'left_menu.php'; ?>
-			</div>
-		</div>
-		<div class="col-sm-9 p_t20">
-			<div class="row">
-				<div class="col-xs-4 text-center">
-					<a href="<?php echo base_url(); ?>dashboard/buy_bitcoin">
-					<img alt="" src="<?php echo base_url(); ?>assets/images/add_money.png">
-					<br>
-					<span>Buy Bitcoin</span>
-					</a>
-				</div>
-				<div class="col-xs-4 text-center">
-					<a href="<?php echo base_url(); ?>dashboard/sell_bitcoin">
-					<img alt="" src="<?php echo base_url(); ?>assets/images/with_dr.png">
-					<br>
-					<span>Sell Bitcoin</span>
-					</a>
-				</div>
-				<div class="col-xs-4 text-center">
-					<a href="<?php echo base_url(); ?>dashboard/send_bitcoin">
-					<img alt="" src="<?php echo base_url(); ?>assets/images/send_bit.png">
-					<br>
-					<span>Send Bitcoin</span>
-					</a>
-				</div>
-			</div>
-			
-			
+		<div class="col-sm-7 p_t20" style="float:none;margin-right:auto;margin-left:auto;">			
 <div class="well">
-<div class="p_20 full_wid">
+    <div class="p_20 full_wid">
 <h3 class="line"><span>Buy Bitcoin</span></h3>
 <?php  if (isset($ms)) { ?>
 		<span style="color:black">

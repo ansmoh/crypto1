@@ -70,7 +70,6 @@
 									<ul class="dropdown-menu">
 										<li><a href="/dashboard">My Dashboard</a></li>
 										<li><a href="/dashboard/account_activate">Verify My Account</a></li>
-										<li><a href="/dashboard/transaction">Send Bitcoin</a></li>
 										<li><a href="/dashboard/sell_bitcoin">Send Bitcoin</a></li>
 										<li><a href="/dashboard/payment_method">Payment Methods</a></li>
 										<?php if($this->session->userdata('role') == '3'): ?>
@@ -132,6 +131,10 @@
                             <div>
                                 <i class="fa fa-dollar"></i>
                                 0.00
+                            </div>
+                            <div>
+                                <i class="fa"></i>
+                                <?php echo $this->session->userdata("username"); ?>
                             </div>
                         </div>
                     </div>
