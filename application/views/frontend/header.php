@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" type="image/ico" sizes="" href="<?php echo base_url();?>assets/images/icon/favicon.ico">
-		<title>EZBTC:: Buy or Sell Bitcoin Instantly</title>    
+		<title>ezBtc:: Buy or Sell Bitcoin Instantly</title>    
 		<link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet">
 		<link href="<?php echo base_url();?>assets/css/responsive-slider.css" rel="stylesheet" media="screen">
